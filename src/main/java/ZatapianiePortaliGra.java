@@ -3,18 +3,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 class Portal {
-    private int level; //level = długość statku
     private String name;
     private int [] rows = new int [7];
     private int [] columns = new int [7];
-
-    public void setLevel(int l) {
-        this.level = l;
-    }
-
-    public int getLevel() {
-        return level;
-    }
 
     public void setName(String n) {
         this.name = n;
@@ -89,12 +80,6 @@ class Portal {
 
 }
     class Funkcje{
-        private int numberOfPortals;
-        private int minNumberOfPortals = 7;
-        private int maxNumberOfPortals = 7;
-        private int numberOfRows;
-        private int numberOfColums;
-        private int range;
         private int generatedNumber;
         private int min;
         private int max;
@@ -103,50 +88,6 @@ class Portal {
         private int generatedDir;
         int[][] plansza = new int[7][7];
 
-
-        public int getNumberOfPortals() {
-            return numberOfPortals;
-        }
-
-        public void setNumberOfPortals(int numberOfPortals) {
-            this.numberOfPortals = numberOfPortals;
-        }
-
-        public int getMinNumberOfPortals() {
-            return minNumberOfPortals;
-        }
-
-        public void setMinNumberOfPortals(int minNumberOfPortals) {
-            this.minNumberOfPortals = minNumberOfPortals;
-        }
-
-        public int getMaxNumberOfPortals() {
-            return maxNumberOfPortals;
-        }
-
-        public void setMaxNumberOfPortals(int maxNumberOfPortals) {
-            this.maxNumberOfPortals = maxNumberOfPortals;
-        }
-
-        public int getNumberOfRows() {
-            return numberOfRows;
-        }
-
-        public void setNumberOfRows(int numberOfRows) {
-            this.numberOfRows = numberOfRows;
-        }
-
-        public int getNumberOfColums() {
-            return numberOfColums;
-        }
-
-        public void setNumberOfColums(int numberOfColums) {
-            this.numberOfColums = numberOfColums;
-        }
-
-        public int getRange() {
-            return range;
-        }
 
         public void generatePlansza(){
             int x = 0;
@@ -227,22 +168,12 @@ public class ZatapianiePortaliGra {
         byte x;
         byte y;
 
-        funkcje.setNumberOfColums(maxRandom);
-        funkcje.setNumberOfRows(maxRandom);
-
         portal1.setName("wp.pl");
         portal2.setName("onet.pl");
         portal3.setName("interia.pl");
 
-        portal1.setLevel(level);
-        portal2.setLevel(level);
-        portal3.setLevel(level);
-
         funkcje.setMin(0);
         funkcje.setMax(maxRandom); // to genetate start position of the ship
-
-        funkcje.setMind(0);
-        funkcje.setMaxd(4); // to generate direction of ship
 
         temp1 = funkcje.generatePos();
         temp2 = funkcje.generatePos();
